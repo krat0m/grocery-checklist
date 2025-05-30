@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grocery Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1em;
+      background: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      margin-top: 1.2em;
+      color: #333;
+    }
+    label {
+      display: block;
+      padding: 6px 0;
+      font-size: 1.1em;
+    }
+    input[type="checkbox"] {
+      margin-right: 12px;
+    }
+    .category {
+      margin-bottom: 1em;
+      padding: 1em;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛒 Grocery Checklist</h1>
+
+  <div class="category">
+    <h2>🥩 Meat & Seafood</h2>
+    <label><input type="checkbox"> Chicken breast</label>
+    <label><input type="checkbox"> Chicken drumsticks</label>
+    <label><input type="checkbox"> Ribeye steaks (x3)</label>
+    <label><input type="checkbox"> Ground beef</label>
+    <label><input type="checkbox"> Turkey</label>
+    <label><input type="checkbox"> Bacon</label>
+  </div>
+
+  <div class="category">
+    <h2>🧀 Dairy & Eggs</h2>
+    <label><input type="checkbox"> Cheese (block)</label>
+    <label><input type="checkbox"> Milk</label>
+    <label><input type="checkbox"> Butter</label>
+  </div>
+
+  <div class="category">
+    <h2>🥬 Produce</h2>
+    <label><input type="checkbox"> Fruit</label>
+  </div>
+
+  <div class="category">
+    <h2>🧁 Bakery & Bread</h2>
+    <label><input type="checkbox"> Brown sugar</label>
+    <label><input type="checkbox"> Chocolate chips</label>
+  </div>
+
+  <div class="category">
+    <h2>🧂 Pantry & Baking</h2>
+    <label><input type="checkbox"> Baking soda</label>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registered'))
+        .catch(err => console.error('Service Worker failed', err));
+    }
+  </script>
+</body>
+</html>
